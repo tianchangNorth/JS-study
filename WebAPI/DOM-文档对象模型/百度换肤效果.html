@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      ul {
+        width: 400px;
+        margin: 400px auto;
+      }
+      li {
+        float: left;
+        list-style: none;
+        cursor: pointer;
+      }
+      img {
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li><img src="images/1.jpg" alt="" /></li>
+      <li><img src="images/2.jpg" alt="" /></li>
+      <li><img src="images/3.jpg" alt="" /></li>
+      <li><img src="images/4.jpg" alt="" /></li>
+    </ul>
+    <script>
+      var lis = document.querySelector("ul").querySelectorAll("img");
+      var body = document.body;
+      for (var i = 0; i < lis.length; i++) {
+        lis[i].onclick = function () {
+          body.style.backgroundImage = "url(" + this.src + ")"; //this.src是我们点击图片的路径
+          body.style.backgroundSize = "cover";
+        };
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //声明变量
+      let a;
+      let b, c, d;
+      let f = 100,
+        girl = "i love you ",
+        h = [];
+
+      //变量不能重复声明
+      //   let star = "罗志祥";
+      //   let star = "小猪";
+
+      //块级作用域
+      {
+        let girl = "周扬青";
+      }
+      console.log(girl); //无法打印
+
+      //不存在变量提升
+      //   console.log(song);
+      //   let song = "iloveyou";
+
+      //不影响作用域链
+      {
+        let school = "hpu";
+        function fn() {
+          console.log(school);
+        }
+        fn();
+      }
+    </script>
+  </body>
+</html>

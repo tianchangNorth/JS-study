@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   window.onload = function () {
+      //     var btn = document.querySelector("button");
+      //     btn.onclick = function () {
+      //       alert("sb");
+      //     };
+      //   };
+      //   //传统方法会冲突
+      //   window.onload = function () {
+      //     alert("22");
+      //   };
+      //新方法
+      window.addEventListener("load", function () {
+        var btn = document.querySelector("button");
+        btn.addEventListener("click", function () {
+          alert("666");
+        });
+      });
+      window.addEventListener("load", function () {
+        alert("sb");
+      });
+      document.addEventListener("DOMContentLoaded", function () {
+        alert(33);
+      });
+      //   load等页面内容全部加载完毕，包含页面dom元素图片flash css等等
+      //   D0MContentLoaded是DoM加载完毕，不包含图片falsh css等就可以执行加载速度比load更快一些
+    </script>
+    <button>点击</button>
+  </body>
+</html>

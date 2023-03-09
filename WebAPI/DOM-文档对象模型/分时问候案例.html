@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img src="images/z.gif" alt="" />
+    <p>早上好，写代码去吧</p>
+    <script>
+      var img = document.querySelector("img");
+      var p = document.querySelector("p");
+      var time = new Date();
+      var h = time.getHours();
+      if (h < 12 && h > 6) {
+        p.innerHTML = "早上好，写代码去";
+        img.src = "images/z.gif";
+      }
+      if (h >= 12 && h <= 20) {
+        p.innerHTML = "下午好，写代码去";
+        img.src = "images/x.gif";
+      } else {
+        p.innerHTML = "晚上上好，写代码去";
+        img.src = "images/w.gif";
+      }
+    </script>
+  </body>
+</html>

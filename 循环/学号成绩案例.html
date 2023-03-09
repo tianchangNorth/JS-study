@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var str = prompt("请输入学生人数");
+      var chengji, str1, submit;
+      num = parseInt(str);
+      submit = 0;
+      for (i = 1; i <= num; i++) {
+        str1 = prompt("请输入学生" + i + "的成绩");
+        chengji = parseInt(str1);
+        submit = submit + chengji;
+      }
+      alert("该班级取得的总成绩是" + submit);
+      alert("该班级的平均是" + submit / num);
+    </script>
+  </head>
+  <body></body>
+</html>

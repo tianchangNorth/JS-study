@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      ul {
+        width: 150px;
+        margin: 200px auto;
+      }
+      ul li {
+        float: left;
+        margin: 5px;
+        width: 24px;
+        height: 24px;
+        background: url(images/sprite.png) no-repeat;
+        list-style: none;
+        background-position: 0 0;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <script>
+      var lis = document.querySelectorAll("li");
+      ///让索引号乘以44就是每个1i的背景y坐标index就是我们的y坐标
+      for (i = 0; i < lis.length; i++) {
+        lis[i].style.backgroundPosition = "0 -" + i * 44 + "px";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="demo" index="1"></div>
+    <script>
+      var div = document.querySelector("div");
+      //1.获取元素属性值
+      //(1) element.属性
+      console.log(div.id);
+      //(2)element.getAttribute('属性') get得到获取 attribute 属性的意思 我们程序员自己添加的属性我们称为自定义属性 index
+      console.log(div.getAttribute("index"));
+      //设置元素属性值
+      div.id = "niubi";
+      //element.setAttribute('属性','值') set 设置
+      div.setAttribute("index", "666");
+      //移除属性 element.removeAttribute(属性)
+      div.removeAttribute("index");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var data = new Date();
+      var year = data.getFullYear(),
+        month = data.getMonth() + 1,
+        dates = data.getDate(),
+        day = data.getDay();
+      var arr = [
+        "星期天",
+        "星期一",
+        "星期二",
+        "星期三",
+        "星期四",
+        "星期五",
+        "星期六",
+      ];
+
+      console.log(
+        year + "-" + month + "-" + dates + " " + getTime() + " " + arr[day]
+      );
+      function getTime() {
+        var time = new Date();
+        var h = time.getHours();
+        h = h < 10 ? "0" + h : h;
+        var m = time.getMinutes();
+        m = m < 10 ? "0" + m : m;
+        var s = time.getSeconds();
+        s = s < 10 ? "0" + s : s;
+        return h + ":" + m + ":" + s;
+      }
+      // console.log(getTime());
+      // var num2 = 5;
+    </script>
+  </head>
+  <body></body>
+</html>

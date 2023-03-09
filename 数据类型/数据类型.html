@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Number 数字型，包含整型值和浮点型值，如21、0.21  默认值 0
+        Boolean 布尔值类型，如true、false,等价于1和0     默认值 false
+        String
+        字符串类型，如"张三”注意咱们js里面，字符串都带引号 默认值""
+        Undefined
+        vara;声明了变量a但是没有给值，此时a=undefined 默认值 undefined
+        Null vara=null;声明了变量a为空值 默认值 null -->
+    <script>
+      var num = 010; //数字前面加0表示八进制
+      console.log(num);
+      var num2 = 0x123456; //数字前＋0x表示16进制
+      console.log(num2);
+      var str = "我是一个'高富帅'\n程序员";
+      console.log(str);
+      //   isNaN();
+      // 这个方法用来判断非数字,并且返回一个值如果是数字返回的是fa1se如果不是数字返true
+      console.log(isNaN("许晨阳"));
+      alert(
+        "酷热难耐，火辣的太阳底下，我挺拔的身姿，成为了最为独特的风景。\n我审视四周，这里，是我的舞台，我就是天地间的王者。\n 这一刻，我豪气冲天，终于大喊一声：“收破烂啦~”"
+      );
+      var flag = true;
+      var flag1 = false;
+      console.log(flag + 1);
+      console.log(flag1 + 1);
+      var str;
+      console.log(str);
+      var variable = undefined;
+      console.log(variable + "pink");
+      console.log(variable + 1); //返回值是NAN not a number
+      var space = null;
+      console.log(space + "pink");
+      console.log(space + 1); //返回值1
+    </script>
+  </head>
+  <body></body>
+</html>

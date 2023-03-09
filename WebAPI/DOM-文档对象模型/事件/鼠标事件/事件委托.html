@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li>一川烟草，满城风絮，梅子黄时雨</li>
+      <li>一川烟草，满城风絮，梅子黄时雨</li>
+      <li>一川烟草，满城风絮，梅子黄时雨</li>
+      <li>一川烟草，满城风絮，梅子黄时雨</li>
+      <li>一川烟草，满城风絮，梅子黄时雨</li>
+    </ul>
+    <script>
+      var ul = document.querySelector("ul");
+      var li = document.querySelectorAll("li");
+      ul.addEventListener("click", function (e) {
+        alert("niu");
+        for (var i = 0; i < li.length; i++) {
+          li[i].style.backgroundColor = "";
+        }
+        e.target.style.backgroundColor = "blue"; //得到我们点击的对象
+      });
+    </script>
+  </body>
+</html>

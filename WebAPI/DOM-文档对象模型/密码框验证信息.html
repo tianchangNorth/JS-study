@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      p {
+        padding-left: 20px;
+        display: inline;
+        font-size: 16px;
+        background: url(images/mess.png) no-repeat center left;
+      }
+      input {
+        outline: none;
+      }
+      .right {
+        background: url(images/right.png) no no-repeat center left;
+      }
+      .wrong {
+        color: red;
+        background: url(images/wrong.png) no-repeat center left;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <input type="password" class="ipt" />
+      <p class="message">请输入6-16位密码</p>
+      <script>
+        //首先判断的事件是表单失去焦点onblur  onfocus 获取焦点
+        // 如果输入正确则提示正确的信息颜色为绿色小图标变化
+        // 如果输入不是6到16位，则提示错误信息颜色为红色小图标变化
+        // 因为里面变化样式较多，我们采取className修改样式
+        var ipt = document.querySelector("input");
+        var message = document.querySelector("p");
+        ipt.onblur = function () {
+          if (ipt.value.length <= 16 && ipt.value.length >= 6) {
+            message.className = "right message";
+          } else {
+            message.className = "wrong message";
+            message.innerHTML = "傻逼";
+          }
+        };
+      </script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0px;
+        padding: 0px;
+      }
+      .login-header {
+        text-align: center;
+        font-size: 24px;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+        display: block;
+      }
+      .login-body {
+        display: none;
+        width: 600px;
+        height: 400px;
+        background-color: white;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+        box-shadow: 0 0 20px #eee;
+        padding: 50px;
+        padding-top: 0px;
+      }
+      .shadow {
+        display: none;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.3);
+      }
+      .login-body .title {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        font-weight: 400;
+        cursor: move;
+        height: 60px;
+        padding-top: 10px;
+        line-height: 60px;
+      }
+      .login-uname {
+        float: left;
+        padding-left: 20px;
+        margin-top: 50px;
+        margin-bottom: 25px;
+      }
+      .login-uname input {
+        width: 400px;
+        height: 40px;
+      }
+      .login-password input {
+        width: 400px;
+        height: 40px;
+      }
+      input {
+        outline: none;
+      }
+      button {
+        margin: 50px 100px;
+        width: 300px;
+        height: 50px;
+        background-color: white;
+        border: #ebebeb 1px solid;
+        cursor: pointer;
+      }
+      .login-close {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 1px solid #ebebeb;
+        text-align: center;
+        line-height: 50px;
+        font-size: 14px;
+        top: -25px;
+        right: -25px;
+        background-color: white;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-header">
+      <a href="javascript:;" id="link">点击,弹出登录框</a>
+    </div>
+    <div class="login-body">
+      <div class="title">登录会员</div>
+      <div class="login-uname">
+        用户名: <input type="text" placeholder="请输入用户名" />
+      </div>
+      <div class="login-password">
+        登录密码: <input type="password" placeholder="请输入密码" />
+      </div>
+      <button class="login-button">登录会员</button>
+      <div class="login-close"><p>关闭</p></div>
+    </div>
+    <div class="shadow"></div>
+    <script>
+      var link = document.querySelector("#link");
+      var colse = document.querySelector(".login-close");
+      var title = document.querySelector(".login-body").querySelector(".title");
+
+      var login = document.querySelector(".login-body");
+      var shadow = document.querySelector(".shadow");
+      //点击链接让登陆页面显示
+      link.addEventListener("click", function () {
+        login.style.display = "block";
+        shadow.style.display = "block";
+      });
+      //点击关闭按钮就关闭页面
+      colse.addEventListener("click", function () {
+        login.style.display = "none";
+        shadow.style.display = "none";
+      });
+      //模态框移动
+      title.addEventListener("mousedown", function (e) {
+        var x = e.pageX - login.offsetLeft;
+        var y = e.pageY - login.offsetTop;
+        //鼠标在页面中的坐标减去在盒子中的坐标
+        document.addEventListener("mousemove", move);
+        function move(e) {
+          login.style.left = e.pageX - x + "px";
+          login.style.top = e.pageY - y + "px";
+        }
+        document.addEventListener("mouseup", function () {
+          document.removeEventListener("mousemove", move);
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        position: absolute;
+        left: 0px;
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+      }
+      span {
+        position: absolute;
+        top: 50%;
+        display: block;
+        width: 100px;
+        height: 100px;
+        background-color: purple;
+      }
+    </style>
+  </head>
+  <body>
+    <span></span>
+    <div></div>
+
+    <script>
+      var div = document.querySelector("div");
+      var span = document.querySelector("span");
+      function animate(obj, target) {
+        var timer = setInterval(function () {
+          if (obj.offsetLeft >= target) {
+            clearInterval(timer);
+          } else {
+            obj.style.left = obj.offsetLeft + 1 + "px";
+          }
+        }, 10);
+      }
+      div.addEventListener("click", function () {
+        animate(div, 400);
+        animate(span, 400);
+      });
+    </script>
+  </body>
+</html>

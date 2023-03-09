@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      .box {
+        margin: 200px auto;
+        width: 800px;
+        height: 600px;
+      }
+      .box-hd {
+        width: 800px;
+        height: 50px;
+        background-color: aliceblue;
+      }
+      .box-hd ul .common {
+        list-style: none;
+        float: left;
+        line-height: 50px;
+        padding: 0px 20px;
+        cursor: pointer;
+      }
+      .change {
+        color: white;
+        background-color: red;
+      }
+      .item {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="box-hd">
+        <ul>
+          <li class="change common">商品介绍</li>
+          <li class="common">规格与包装</li>
+          <li class="common">售后保障</li>
+          <li class="common">商品评价</li>
+          <li class="common">手机社区</li>
+        </ul>
+      </div>
+      <div class="box-bd">
+        <div class="item" style="display: block">商品介绍详情</div>
+        <div class="item">规格与包装</div>
+        <div class="item">售后保障</div>
+        <div class="item">商品评价</div>
+        <div class="item">手机社区</div>
+      </div>
+    </div>
+    <script>
+      var lis = document
+        .getElementsByClassName("box-hd")[0]
+        .querySelectorAll("li");
+      var items = document
+        .getElementsByClassName("box-bd")[0]
+        .querySelectorAll(".item");
+      for (var i = 0; i < lis.length; i++) {
+        lis[i].setAttribute("index", i);
+        lis[i].onclick = function () {
+          for (var j = 0; j < lis.length; j++) {
+            lis[j].className = "common";
+            items[j].style.display = "none";
+          }
+          this.className = "change common";
+          var index = this.getAttribute("index");
+          items[index].style.display = "block";
+        };
+      }
+    </script>
+  </body>
+</html>

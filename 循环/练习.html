@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var num = 0;
+      //1.求1-100之间所有数的平均值
+      for (num1 = 1; num1 <= 100; num1++) {
+        num = num + num1;
+      }
+      console.log(num / 100);
+      //100以内奇数(odd)和 偶数(even)和
+      num = 0;
+      for (num2 = 0; num2 <= 100; num2 += 2) {
+        num = num + num2;
+      }
+      console.log(num);
+      num = 0;
+      for (num3 = 1; num3 <= 100; num3 += 2) {
+        num = num + num3;
+      }
+      console.log(num);
+      //所有能被三整除的数的和
+      num = 0;
+      for (num4 = 0; num4 <= 100; num4++) {
+        if (num4 % 3 == 0) {
+          num = num + num4;
+        }
+      }
+      console.log(num);
+    </script>
+  </head>
+  <body></body>
+</html>

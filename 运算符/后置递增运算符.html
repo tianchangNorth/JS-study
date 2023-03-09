@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var num = 10;
+      num++;
+      console.log(num);
+      //1.前置递增和后置递增如果单独使用 效果是一样的
+      //2.后置递增 口诀：先返回原值 后自加1
+      var age = 10;
+      console.log(age++ + 10); //20
+      console.log(age);
+      var e = 10;
+      var f = e++ + ++e;
+      console.log(f); //22
+    </script>
+  </head>
+  <body></body>
+</html>

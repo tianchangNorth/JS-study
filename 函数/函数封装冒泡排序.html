@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function paiXu(arr) {
+        for (i = 0; i <= arr.length - 1; i++) {
+          for (j = 0; j <= arr.length - i - 1; j++) {
+            if (arr[j] < arr[j + 1]) {
+              temp = arr[j + 1];
+              arr[j + 1] = arr[j];
+              arr[j] = temp;
+            }
+          }
+        }
+        return arr;
+      }
+      var re = paiXu([1, 85, 78, 96, 4, 5, 85, 718, 222]);
+      console.log(re);
+    </script>
+  </head>
+  <body></body>
+</html>

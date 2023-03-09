@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      span {
+        color: white;
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        background-color: black;
+        margin: 50px 10px;
+        font-size: 40px;
+        line-height: 100px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <span class="hour"></span>
+    <span class="minute"></span>
+    <span class="second"></span>
+    <script>
+      var hour = document.querySelector(".hour");
+      var minute = document.querySelector(".minute");
+      var second = document.querySelector(".second");
+      var inputTime = +new Date("2022-10-8 18:00:00");
+      function countDown() {
+        var nowTime = +new Date(); //当前时间总毫秒数
+        var times = (inputTime - nowTime) / 1000; //剩余时间总秒数
+        var h = parseInt((times / 60 / 60) % 24);
+        h = h < 10 ? "0" + h : h;
+        var mins = parseInt((times / 60) % 60);
+        mins = mins < 10 ? "0" + mins : mins;
+        var s = parseInt(times % 60);
+        s = s < 10 ? "0" + s : s;
+        hour.innerHTML = h;
+        minute.innerHTML = mins;
+        second.innerHTML = s;
+      }
+      countDown(); //先调用一次防止刷新页面有空白
+      setInterval(countDown, 1000);
+    </script>
+  </body>
+</html>

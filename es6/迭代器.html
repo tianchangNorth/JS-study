@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //声明数组
+      const xiyou = ["猪八戒", "沙僧", "孙悟空", "唐僧"];
+      //使用for...of遍历
+      for (let i of xiyou) {
+        console.log(i);
+      }
+
+      console.log(xiyou);
+      let iterator = xiyou[Symbol.iterator]();
+      console.log(iterator);
+      console.log(iterator.next()); //猪八戒
+      console.log(iterator.next()); //沙僧
+      console.log(iterator.next()); //孙悟空
+      console.log(iterator.next()); //唐僧
+      console.log(iterator.next()); //undefined
+    </script>
+  </body>
+</html>

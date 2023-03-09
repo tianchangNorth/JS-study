@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //声明常量
+      const SCHOOL = "HPU";
+
+      //一般常量使用大写
+      const a = 100;
+
+      //常量值不能修改
+      //   SCHOOL = "dps"; //报错
+
+      //块级作用域
+      //   {
+      //     const PLAYER = "UZI";
+      //   }
+      //   console.log(PLAYER);
+
+      //对于数组和对象的修改不会算作对常量的修改，不会报错， 数组，对象粗存的是地址 ，地址不变即可
+      const TEAM = ["UZI", "MING", "LETME"];
+      TEAM.push("MEIKO");
+      console.log(TEAM);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box; /*固定盒子大小 */
+      }
+      li {
+        list-style: none;
+        cursor: pointer;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+        width: 100px;
+        height: 40px;
+        font-size: 14px;
+        font-weight: 400;
+      }
+      .nav {
+        width: 400px;
+        margin: 100px auto;
+      }
+      .nav li {
+        float: left;
+        width: 100px;
+        height: 40px;
+
+        line-height: 40px;
+        text-align: center;
+      }
+      .nav li ul li {
+        border: 1px solid red;
+        border-top: 0;
+      }
+      .nav > li:hover {
+        background-color: #eee;
+      }
+      .nav li ul li:hover {
+        background-color: #eee;
+      }
+      .nav li ul {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <ul class="nav">
+        <li>
+          <a href="#">微博</a>
+          <ul>
+            <li><a href="#">私信</a></li>
+            <li><a href="#">评论</a></li>
+            <li><a href="#">@我</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">微博</a>
+          <ul>
+            <li><a href="#">私信</a></li>
+            <li><a href="#">评论</a></li>
+            <li><a href="#">@我</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">微博</a>
+          <ul>
+            <li><a href="#">私信</a></li>
+            <li><a href="#">评论</a></li>
+            <li><a href="#">@我</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">微博</a>
+          <ul>
+            <li><a href="#">私信</a></li>
+            <li><a href="#">评论</a></li>
+            <li><a href="#">@我</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <script>
+      var nav = document.querySelector(".nav");
+      var lis = nav.children;
+      for (var i = 0; i < lis.length; i++) {
+        lis[i].onmouseover = function () {
+          this.children[1].style.display = "block";
+        };
+        lis[i].onmouseout = function () {
+          this.children[1].style.display = "none";
+        };
+      }
+    </script>
+  </body>
+</html>

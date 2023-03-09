@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .father {
+        position: relative;
+        box-sizing: border-box;
+        padding: 100px;
+        width: 200px;
+        height: 200px;
+        margin: 100px auto;
+        background-color: purple;
+      }
+      .son {
+        width: 100px;
+        height: 100px;
+        margin: 0px auto;
+        background-color: skyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="father"><div class="son"></div></div>
+    <script>
+      var father = document.querySelector(".father");
+      var son = document.querySelector(".son");
+      //可以得到元素的大小 包含padding border width
+      console.log(father.offsetHeight);
+      console.log(father.offsetWidth);
+      //以带有定位的父亲为准 父亲没有定位则以body为准
+      console.log(son.offsetTop);
+      console.log(son.offsetLeft);
+      //返回带有定位的的父亲 没有则向上查找 直到body
+      console.log(son.offsetParent);
+      console.log(father.offsetParent);
+      //返回最近一级的父亲
+      console.log(son.parentNode);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 250px;
+        height: 40px;
+        background-color: skyblue;
+      }
+      p {
+        width: 25 0px;
+        height: 40px;
+        background-color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <button>获取当前系统时间</button>
+    <div>当前系统时间是</div>
+    <p>当前时间是</p>
+    <script>
+      var btn = document.querySelector("button");
+      var div = document.querySelector("div");
+      btn.onclick = function () {
+        div.innerHTML = getTime();
+      };
+
+      function getTime() {
+        var data = new Date();
+        var year = data.getFullYear(),
+          month = data.getMonth() + 1,
+          dates = data.getDate(),
+          day = data.getDay();
+        var arr = [
+          "星期天",
+          "星期一",
+          "星期二",
+          "星期三",
+          "星期四",
+          "星期五",
+          "星期六",
+        ];
+        return year + "年" + month + "月" + dates + "日 " + arr[day];
+      }
+      var p = document.querySelector("p");
+      p.innerHTML = getTime();
+    </script>
+  </body>
+</html>

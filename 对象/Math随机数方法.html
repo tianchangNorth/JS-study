@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      console.log(Math.random());
+      //两个数之间的随机整数 包含这两个数
+      function getRandom(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值
+      }
+      console.log(getRandom(1, 10));
+      var students = ["许晨阳", "张松涛", "耿蒋国", "郭少", "啊名"];
+      console.log(students[getRandom(0, students.length - 1)]);
+    </script>
+  </head>
+  <body></body>
+</html>

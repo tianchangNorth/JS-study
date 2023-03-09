@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 缓动动画就是让元素运动速度有所变化，最常见的是让速度慢慢停下来
+    思路：
+    1.让盒子每次移动的距离慢慢变小，速度就会慢慢落下来。
+    2.核心算法：（目标值-现在的位置）/10做为每次移动的距离步长
+    3.停止的条件是：让当前盒子位置等于目标位置就停止定时器 -->
+    <script src="animate.js"></script>
+    <style>
+      div {
+        position: absolute;
+        top: 100px;
+        width: 100px;
+        height: 100px;
+        background-color: skyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <button class="btn000">000</button>
+    <button class="btn500">500</button>
+    <button class="btn800">800</button>
+    <script>
+      var div = document.querySelector("div");
+      var btn000 = document.querySelector(".btn000");
+      var btn500 = document.querySelector(".btn500");
+      var btn800 = document.querySelector(".btn800");
+      btn000.addEventListener("click", function () {
+        animate(div, 0, function () {
+          div.style.backgroundColor = "yellow";
+        });
+      });
+      btn500.addEventListener("click", function () {
+        animate(div, 500, function () {
+          div.style.backgroundColor = "blue";
+        });
+      });
+      btn800.addEventListener("click", function () {
+        animate(div, 800, function () {
+          div.style.backgroundColor = "red";
+        });
+      });
+    </script>
+  </body>
+</html>

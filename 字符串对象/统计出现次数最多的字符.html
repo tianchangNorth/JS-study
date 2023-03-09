@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //把每个字符都存储给对象，如果对象没有该属性，就为1，如果存在了就+1
+      //遍历对象，得到最大值和该字符
+      //1.
+      var str = "acnwbaudvaougciyfcbcmbadwdawnwdiaidbdadbaobdubd";
+      var o = {};
+      for (i = 0; i < str.length; i++) {
+        chars = str.charAt(i);
+        if (o[chars]) {
+          o[chars]++;
+        } else {
+          o[chars] = 1;
+        }
+      }
+      console.log(o);
+      //2.遍历对象
+      var max = 0;
+      var ch = "";
+      for (var k in o) {
+        if (o[k] > max) {
+          max = o[k];
+          ch = k;
+        }
+      }
+      console.log(ch);
+      console.log(max);
+    </script>
+  </head>
+  <body></body>
+</html>

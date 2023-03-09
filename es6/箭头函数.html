@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //es6允许使用箭头定义函数   =>
+      //声明函数
+      // let fn = function(){
+      // }
+
+      //箭头函数
+      let fn = () => {
+        console.log("niubi");
+      };
+      fn();
+
+      //箭头函数的this是静态的，始终函数声明时所在作用于的this值
+      function getname() {
+        console.log(this.name);
+      }
+      let getname2 = () => {
+        console.log(this.name);
+      };
+      window.name = "hpu";
+      const school = {
+        name: "河南理工",
+      };
+      getname(); //hpu
+      getname2(); //hpu
+
+      getname.call(school);
+      getname2.call(school);
+
+      //不能作为构造函数实例化对象
+      //   let person = (name, age) => {
+      //     this.name = name;
+      //     this.age = age;
+      //   };//失败
+
+      let person = function (name, age) {
+        this.name = name;
+        this.age = age;
+      };
+      let me = new person("north", 21);
+      console.log(me);
+      console.log(person);
+
+      //不能使用arguments变量
+      //   let fn1 = () => {
+      //     return console.log(arguments);
+      //   };
+      let fn1 = function () {
+        return console.log(arguments);
+      };
+      fn1(1, 2, 3);
+
+      //箭头函数的简写
+      //1.省略小括号 当形参有且仅有一个时
+      let add = (n) => {
+        console.log(n + n);
+      };
+      add(5);
+      //省略花括号,当代马蹄只有一条语句时 此是return也要省略，语句执行结果就是函数返回值
+      let pow = (a) => console.log(a * a);
+      pow(5);
+    </script>
+  </body>
+</html>

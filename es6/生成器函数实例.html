@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //异步编程
+      //后台控制输出 111  2s后输出222 3s后输出333
+      function* gen() {
+        yield one();
+        yield two();
+        yield three();
+      }
+
+      function one() {
+        setTimeout(() => {
+          console.log(111);
+          iterator.next();
+        }, 1000);
+      }
+      function two() {
+        setTimeout(() => {
+          console.log(222);
+          iterator.next();
+        }, 2000);
+      }
+      function three() {
+        setTimeout(() => {
+          console.log(333);
+          iterator.next();
+        }, 3000);
+      }
+
+      //调用函数生成器
+      let iterator = gen();
+      iterator.next();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var str = "改革春风吹满地,春天来了";
+      console.log(str.indexOf("春", 3)); //从前往后 从第三个开始  8
+      console.log(str.lastIndexOf("春", 7)); //从后往前 从第七个开始  2
+
+      var str1 = "asdaainmajkbapaa";
+      function search(str) {
+        world = prompt("请输入您想查询的字符");
+        var post = [];
+        var i = 0;
+        do {
+          index = str.indexOf(world, i);
+          post.push(index);
+          i = index + 1;
+        } while (index != -1);
+        post.pop();
+        return post;
+      }
+      console.log(search(str1));
+      console.log();
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var mony = 100,
+        oper = 0;
+      var str = prompt("请输入您的操作：\n1.存钱\n2.取钱\n3.显示余额\n4.退出");
+      var num = parseInt(str);
+      switch (num) {
+        case 1:
+          oper = prompt("请输入您想存的数额") - 0;
+          mony += oper;
+          alert("您现在的余额为:" + mony);
+          break;
+        case 2:
+          oper = prompt("请输入您想取的数额") - 0;
+          mony -= oper;
+          alert("您现在的余额为:" + mony);
+          break;
+        case 3:
+          alert("您现在的余额为:" + mony);
+          break;
+        case 4:
+          alert("您正在退出");
+          break;
+        default:
+          break;
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

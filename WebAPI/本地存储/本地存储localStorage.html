@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      input {
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" name="" id="" />
+    <button class="set">存储数据</button>
+    <button class="get">获取数据</button>
+    <button class="remove">删除数据</button>
+    <button class="del">清空数据</button>
+    <script>
+      // 1、生命周期永久生效，除非手动删除否则关闭页面也会存在
+      // 2、可以多窗口（页面）共享（同一浏览器可以共享）
+      // 3.以键值对的形式存储使用
+      var set = document.querySelector(".set");
+      var ipt = document.querySelector("input");
+      var get = document.querySelector(".get");
+      var remove = document.querySelector(".remove");
+      var del = document.querySelector(".del");
+
+      set.addEventListener("click", function () {
+        var val = ipt.value;
+        localStorage.setItem("name", val);
+      });
+
+      get.addEventListener("click", function () {
+        //获取数据
+        console.log(localStorage.getItem("name"));
+      });
+
+      remove.addEventListener("click", function () {
+        //删除数据
+        localStorage.removeItem("name");
+      });
+
+      del.addEventListener("click", function () {
+        localStorage.clear();
+      });
+    </script>
+  </body>
+</html>

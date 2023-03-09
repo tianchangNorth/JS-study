@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //student._proto_ === Student.prototype
+      // 隐式原型            显式原型
+      class Person {
+        constructor(name) {
+          this.name = name;
+        }
+
+        drink() {
+          console.log("我要喝水");
+        }
+      }
+
+      class Student extends Person {
+        constructor(name, score) {
+          super(name);
+          // this.name = name;
+          this.score = score;
+        }
+
+        introduce() {
+          console.log(`我叫${this.name},考了${this.score}分`);
+        }
+      }
+
+      const student = new Student("张三", 99);
+      console.log(student);
+      student.introduce();
+      student.drink();
+
+      class Teacher extends Person {
+        constructor(name, object) {
+          super(name);
+          this.object = object;
+        }
+
+        tecach() {
+          console.log(`我叫${this.name},我教的是${this.object}`);
+        }
+      }
+      const teacher = new Teacher("张宇", "高数");
+      console.log(teacher);
+      teacher.tecach();
+      teacher.drink();
+    </script>
+  </body>
+</html>

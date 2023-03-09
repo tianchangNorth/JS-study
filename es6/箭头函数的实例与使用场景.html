@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <script>
+      let div = document.querySelector("div");
+      div.addEventListener("click", function () {
+        setTimeout(() => {
+          this.style.backgroundColor = "pink";
+        }, 2000);
+      });
+
+      //从数组中返回偶数元素
+      const arr = [1, 4, 6, 7, 456, 955];
+      const result = arr.filter(function (item) {
+        if (item % 2 === 0) {
+          return true;
+        } else {
+          return false;
+        }
+      });
+      console.log(result);
+      const result1 = arr.filter((item) => item % 2 === 0);
+      console.log(result1);
+    </script>
+  </body>
+</html>

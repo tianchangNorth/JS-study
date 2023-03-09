@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //创建symbol
+      //每一个symbol值都是独一无二的
+      let s = Symbol();
+      console.log(typeof s, s);
+
+      let s1 = Symbol("niubi");
+      let s2 = Symbol("niubi");
+      console.log(s1 === s2); //false
+      console.log(s1);
+
+      //symbol.for创建
+      let s3 = Symbol.for("tianchang");
+      let s4 = Symbol.for("tianchang");
+
+      //symbol不能与其他运算符进行运算
+
+      //usonb
+      //u undefined
+      //s string symbol
+      //o object
+      //n null number
+      //b boolean
+
+      //   var a = "123";
+      //   var b = "123";
+      //   console.log(a === b);//true
+    </script>
+  </body>
+</html>

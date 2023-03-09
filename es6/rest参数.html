@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //es6引入rest参数，用于获取函数的实参，用来代替arguments
+      function data(...args) {
+        console.log(args);
+      }
+      data("许晨阳", "张松涛", "郭少"); //返回包含实参的数组
+
+      //rest参数必须放到最后
+      function data1(a, b, ...args) {
+        console.log(a);
+        console.log(b);
+        console.log(args);
+      }
+      data1(1, 2, 3, 4, 5, 6, 7, 8, 9);
+    </script>
+  </body>
+</html>

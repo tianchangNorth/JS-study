@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>按钮</button>
+    <input type="text" value="输入内容" />
+    <script>
+      var button = document.querySelector("button");
+      var input = document.querySelector("input");
+      button.onclick = function () {
+        input.value = "niu bi";
+        // button.disabled = "true"; //禁用按钮
+        this.disabled = "true"; //this指向函数的调用者
+      };
+    </script>
+  </body>
+</html>

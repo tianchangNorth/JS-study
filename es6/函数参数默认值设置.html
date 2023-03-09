@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //es6允许给函数参数设置初始值
+      let add = (a = 0, b = 0, c = 0) => {
+        return a + b + c;
+      };
+      console.log(add(1, 2));
+
+      //与解构赋值相结合
+      function connect({ host, username, pwd, port }) {
+        console.log(host);
+        console.log(username);
+        console.log(pwd);
+        console.log(port);
+      }
+      connect({
+        host: "atguigu",
+        username: "root",
+        pwd: "root",
+        port: 3369,
+      });
+      console.log(connect);
+    </script>
+  </body>
+</html>

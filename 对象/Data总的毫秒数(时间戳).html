@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var data = new Date();
+      console.log(data.valueOf()); //当前时间到1970.1.1总的毫秒数
+      console.log(data.getTime());
+
+      var data1 = +new Date("2022-9-26 8:8:8");
+      console.log(data1); //+new Data() 返回总的毫秒数
+
+      console.log(Date.now());
+      console.log(data);
+    </script>
+  </head>
+  <body></body>
+</html>

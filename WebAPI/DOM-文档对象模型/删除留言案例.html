@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        background-color: skyblue;
+        width: 400px;
+        height: 40px;
+        line-height: 40px;
+        list-style: none;
+        margin: 5px 0;
+      }
+      input {
+        outline: none;
+      }
+      a {
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" />
+    <button>发布</button>
+    <ul></ul>
+    <script>
+      var input = document.querySelector("input");
+      var btn = document.querySelector("button");
+      var ul = document.querySelector("ul");
+      btn.onclick = function () {
+        if (input.value == "") {
+          alert("sb");
+          return false;
+        } else {
+          var li = document.createElement("li");
+          ul.appendChild(li);
+          li.innerHTML = input.value + "<a href='javascript:;'>删除</a>";
+          var as = document.querySelectorAll("a");
+          for (var i = 0; i < as.length; i++) {
+            as[i].onclick = function () {
+              ul.removeChild(this.parentNode);
+            };
+          }
+          input.value = "";
+        }
+      };
+    </script>
+  </body>
+</html>

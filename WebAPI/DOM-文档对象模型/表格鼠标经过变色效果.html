@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      table {
+        width: 500px;
+        height: 200px;
+        margin: 100px auto;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <table cellspacing="0">
+      <tr>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+      </tr>
+    </table>
+    <script>
+      var trs = document.querySelector("table").querySelectorAll("tr");
+      for (var i = 0; i < trs.length; i++) {
+        //鼠标经过onmouseover 鼠标离开 onmoueseout
+        trs[i].onmouseover = function () {
+          this.style.backgroundColor = "skyblue";
+        };
+        trs[i].onmouseout = function () {
+          this.style.backgroundColor = "";
+        };
+      }
+    </script>
+  </body>
+</html>

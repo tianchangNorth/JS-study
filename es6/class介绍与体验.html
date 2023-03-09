@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //手机
+      //传统方法
+      function phone(brand, price) {
+        this.brand = brand;
+        this.price = price;
+      }
+
+      //添加方法
+      phone.prototype.call = function () {
+        console.log("i can fly");
+      };
+
+      let huawei = new phone("huawei", 7999);
+      huawei.call();
+      console.log(huawei);
+
+      //class 方法
+      class shouji {
+        //构造方法名字不能改
+        constructor(brand, price) {
+          this.brand = brand;
+          this.price = price;
+        }
+        call() {
+          console.log("ni shi ge ji ba ");
+        }
+      }
+
+      let onePhone = new shouji("cuizi", 4399);
+      console.log(onePhone);
+      onePhone.call(); 
+    </script>
+  </body>
+</html>

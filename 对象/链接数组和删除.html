@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const array1 = ["a", "b", "c"];
+      const array2 = ["d", "e", "f"];
+      const array3 = array1.concat(array2);
+      console.log(array3);
+      //------------------------------------------------------------------
+
+      const months = ["Jan", "March", "April", "June"];
+      months.splice(1, 0, "Feb");
+      // inserts at index 1
+      console.log(months);
+      // expected output: Array ["Jan", "Feb", "March", "April", "June"]
+
+      months.splice(4, 1, "May");
+      // replaces 1 element at index 4
+      console.log(months);
+      // expected output: Array ["Jan", "Feb", "March", "April", "May"]
+    </script>
+  </head>
+  <body></body>
+</html>

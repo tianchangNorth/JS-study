@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //声明map
+      let m = new Map();
+
+      //添加元素
+      m.set("name", "north");
+      m.set("change", function () {
+        console.log("we can change everything");
+      });
+      let key = {
+        school: "hpu",
+      };
+      m.set(key, ["nan", "bei"]);
+      console.log(m);
+
+      //size
+      console.log(m.size);
+
+      //删除
+      m.delete("name");
+      console.log(m);
+
+      //获取
+      console.log(m.get("change"));
+      console.log(m.get(key));
+
+      //清空
+      //   m.clear();
+
+      //遍历
+      for (let i of m) {
+        console.log(i);
+      }
+    </script>
+  </body>
+</html>
